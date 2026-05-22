@@ -106,7 +106,7 @@ export const rarePhotos: RarePhoto[] = [
   },
   {
     filename: "bob-mausoleum-nine-mile.jpg",
-    url: WC("Bob_Marley%27s_Mausoleum.JPG"),
+    url: WC("Bob_Marley's_Mausoleum.JPG"),
     caption: "The Mausoleum at Nine Mile",
     context: "Bob is buried at his birthplace in Saint Ann Parish, Jamaica. The chapel houses his casket. A working pilgrimage site.",
     credit: "CC-BY-SA via Wikimedia",

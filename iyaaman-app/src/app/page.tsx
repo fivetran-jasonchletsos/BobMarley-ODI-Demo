@@ -24,19 +24,55 @@ export default function Home() {
       <RarePhotos/>
       <Hero/>
 
-      {/* Hub grid */}
+      {/* Hub grid — styled as a record back-cover tracklist */}
       <section className="px-5 sm:px-8 md:px-12 max-w-6xl mx-auto pb-10">
-        <p className="ornament mb-3">Eight Doors</p>
-        <h2 className="display text-bark text-3xl tracking-tight mb-6">
-          Where you can go
-        </h2>
+        <div className="flex items-end justify-between gap-4 mb-6 sm:mb-8">
+          <div>
+            <p className="ornament mb-2">Side A · Tracklist</p>
+            <h2 className="display headline-tight text-bark leading-[0.88] tracking-tight
+                           text-[44px] sm:text-[72px] md:text-[96px]">
+              WHERE YOU<br/>CAN GO
+            </h2>
+          </div>
+          <p className="mono text-[10px] tracking-widest text-cocoa uppercase hidden sm:block whitespace-nowrap pb-2">
+            08 cuts · 33⅓ RPM
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {HUB.map((h) => (
-            <Link key={h.href} href={h.href}
-                  className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 rounded lift">
-              <p className="ornament">{h.title.split(" ")[0]}</p>
-              <h3 className="serif text-bark text-xl font-bold mt-1">{h.title}</h3>
-              <p className="text-bark_2 text-sm mt-2 leading-relaxed">{h.blurb}</p>
+          {HUB.map((h, i) => (
+            <Link
+              key={h.href}
+              href={h.href}
+              className="group relative block border border-bark/15 bg-sand_2/40 p-4 pl-5
+                         hover:border-ember/60 hover:bg-sand_2/70 rounded lift overflow-hidden"
+            >
+              {/* Track number — runs as a tall display numeral down the left edge */}
+              <span aria-hidden="true"
+                    className="display text-jam_green/15 group-hover:text-ember/25 transition-colors
+                               absolute -right-1 -top-2 leading-none select-none
+                               text-[88px] sm:text-[104px]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              {/* Corner tick — ember accent on hover */}
+              <span aria-hidden="true"
+                    className="absolute left-0 top-4 h-px w-3 bg-bark/30 group-hover:w-6 group-hover:bg-ember
+                               transition-all duration-300"/>
+              <div className="relative">
+                <p className="mono text-[9px] tracking-[0.32em] uppercase text-jam_green">
+                  Track {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="display text-bark text-2xl sm:text-[28px] leading-[0.95] tracking-tight mt-2">
+                  {h.title}
+                </h3>
+                <p className="serif text-bark_2 text-[13.5px] mt-3 leading-relaxed">
+                  {h.blurb}
+                </p>
+                <p className="mono text-[9px] tracking-widest text-cocoa uppercase mt-4 opacity-60
+                              group-hover:opacity-100 group-hover:text-ember transition">
+                  Play side →
+                </p>
+              </div>
             </Link>
           ))}
         </div>

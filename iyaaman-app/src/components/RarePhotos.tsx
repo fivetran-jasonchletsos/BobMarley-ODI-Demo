@@ -52,11 +52,13 @@ export default function RarePhotos() {
               )}
             </div>
 
-            <img
-              src={lead.url ?? `${BASE}/marley/${lead.filename}`}
-              alt={lead.caption}
-              className="relative w-full h-full object-cover"
-            />
+            {lead.url && (
+              <img
+                src={lead.url}
+                alt={lead.caption}
+                className="relative w-full h-full object-cover"
+              />
+            )}
 
             {/* Always-visible caption strip across the bottom */}
             <figcaption className="absolute inset-x-0 bottom-0 bg-jam_black/85 px-5 py-3 border-t border-jam_gold/40">
@@ -99,11 +101,13 @@ export default function RarePhotos() {
                   )}
                 </div>
 
-                <img
-                  src={photo.url ?? `${BASE}/marley/${photo.filename}`}
-                  alt={photo.caption}
-                  className="relative w-full h-full object-cover"
-                />
+                {photo.url && (
+                  <img
+                    src={photo.url}
+                    alt={photo.caption}
+                    className="relative w-full h-full object-cover"
+                  />
+                )}
 
                 {/* Caption overlay, always present */}
                 <figcaption className="absolute inset-x-0 bottom-0 bg-jam_black/85 px-3 py-2 border-t border-jam_gold/30">

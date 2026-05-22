@@ -143,6 +143,15 @@ function NodePortrait({
       className="relative overflow-hidden rounded-full bg-bark"
       style={{ width: size, height: size }}
     >
+      {/* fallback initial chip — rendered first so <img> stacks on top */}
+      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-bark_2 to-bark">
+        <span
+          className="display text-gold/85"
+          style={{ fontSize: size * 0.42, letterSpacing: "0.02em" }}
+        >
+          {initialsFromName(person.name)}
+        </span>
+      </div>
       {portrait ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -155,15 +164,6 @@ function NodePortrait({
           }}
         />
       ) : null}
-      {/* fallback initial chip */}
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-bark_2 to-bark">
-        <span
-          className="display text-gold/85"
-          style={{ fontSize: size * 0.42, letterSpacing: "0.02em" }}
-        >
-          {initialsFromName(person.name)}
-        </span>
-      </div>
       {/* subtle inner vignette over photo for warm tone */}
       {portrait ? (
         <div
@@ -211,10 +211,15 @@ function AlbumOrbit({ person, side }: { person: Person; side: "left" | "right" }
 }
 
 function CoverThumb({ slug, title }: { slug: string; title: string }) {
-  // We don't import the manifest here — instead try the static jpg and fall back
-  // to a flat gold tile if it errors. This keeps the page lean.
+  // Placeholder rendered first so the <img> stacks on top of it. If the image
+  // 404s, onError hides it and the placeholder beneath shows through.
   return (
     <>
+      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-jam_red to-bark_2">
+        <span className="mono text-[8px] text-gold/90 font-bold">
+          {title.charAt(0).toUpperCase()}
+        </span>
+      </div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`${BASE_PATH}/covers/${slug}.jpg`}
@@ -225,11 +230,6 @@ function CoverThumb({ slug, title }: { slug: string; title: string }) {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
       />
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-jam_red to-bark_2">
-        <span className="mono text-[8px] text-gold/90 font-bold">
-          {title.charAt(0).toUpperCase()}
-        </span>
-      </div>
     </>
   );
 }

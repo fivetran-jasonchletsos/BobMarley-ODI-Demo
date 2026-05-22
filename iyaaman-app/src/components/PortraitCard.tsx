@@ -161,6 +161,11 @@ export default function PortraitCard({
           (isFeature ? "aspect-[4/5]" : "aspect-[3/4]")
         }
       >
+        {/* Procedural avatar rendered first so the <img> stacks on top.
+            If portrait fails, onError hides the <img> and this shows through. */}
+        <div className="absolute inset-0">
+          <ProceduralAvatar name={person.name} />
+        </div>
         {portrait ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -169,16 +174,10 @@ export default function PortraitCard({
             loading={priority ? "eager" : "lazy"}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             onError={(e) => {
-              // Hide broken image so the procedural fallback shows through
               (e.currentTarget as HTMLImageElement).style.display = "none";
             }}
           />
         ) : null}
-        {/* Procedural avatar — always rendered behind. If portrait img loads
-            it covers this; if it errors, onError hides it and this shows. */}
-        <div className="absolute inset-0 z-0">
-          <ProceduralAvatar name={person.name} />
-        </div>
 
         {/* Year chip top-right */}
         {yearRange && (

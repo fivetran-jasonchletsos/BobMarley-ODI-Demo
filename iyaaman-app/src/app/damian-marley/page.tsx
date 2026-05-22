@@ -246,17 +246,6 @@ export default function DamianMarleyPage() {
           the cues before the cues happen.
         </p>
 
-        <div className="mt-9 border-l-2 border-ember pl-5 sm:pl-6">
-          <p className="serif text-bark text-[16px] sm:text-[17px] leading-[1.7]">
-            This is the world your tour manager{" "}
-            <span className="mark-ember">Kamal Soliman</span> lives inside of every night.
-          </p>
-          <p className="mt-3">
-            <Link href="/kamal/" className="link-inline mono text-[12px] tracking-widest uppercase">
-              Read his dedication &rarr;
-            </Link>
-          </p>
-        </div>
       </section>
 
       {/* ====================== EPIGRAPH — BOB ====================== */}
