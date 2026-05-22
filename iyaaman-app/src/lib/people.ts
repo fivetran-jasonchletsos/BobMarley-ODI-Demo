@@ -24,7 +24,7 @@ export const people: Person[] = [
   {
     slug: "bob-marley",
     name: "Robert Nesta Marley",
-    aka: ["Bob Marley", "Tuff Gong", "Skipper", "Tuff Gong"],
+    aka: ["Bob Marley", "Tuff Gong", "Skipper", "Nesta"],
     born: "1945-02-06",
     died: "1981-05-11",
     birthplace: "Nine Mile, Saint Ann Parish, Jamaica",
