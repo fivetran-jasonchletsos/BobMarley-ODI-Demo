@@ -13,9 +13,9 @@ export function generateStaticParams(): Params[] {
 
 export function generateMetadata({ params }: { params: Params }): Metadata {
   const a = albumBySlug(params.slug);
-  if (!a) return { title: "Album not found · Iyaaman" };
+  if (!a) return { title: "Album not found · Tuff Gong" };
   return {
-    title: `${a.title} (${a.year}) · ${a.artistDisplay} · Iyaaman`,
+    title: `${a.title} (${a.year}) · ${a.artistDisplay} · Tuff Gong`,
     description: a.blurb,
   };
 }
@@ -231,7 +231,7 @@ export default function AlbumPage({ params }: { params: Params }) {
             One love. One heart. Let&apos;s get together and feel all right.
           </p>
           <p className="mono text-[10px] tracking-widest text-cocoa uppercase mt-3">
-            Iyaaman · A demo built for Kamal Soliman · 2026
+            Tuff Gong · A demo built for Kamal Soliman · 2026
           </p>
         </div>
       </footer>

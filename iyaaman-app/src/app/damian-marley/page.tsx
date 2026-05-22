@@ -2,7 +2,7 @@ import Link from "next/link";
 import TopNav from "@/components/TopNav";
 
 export const metadata = {
-  title: "Damian \"Jr. Gong\" Marley · Iyaaman",
+  title: "Damian \"Jr. Gong\" Marley · Tuff Gong",
   description:
     "A dedicated page for Damian \"Jr. Gong\" Marley — Bob's youngest acknowledged son. " +
     "Born to a Miss World, raised in Kingston, builder of a sound that hung reggae on hip-hop's chassis.",
@@ -209,7 +209,7 @@ export default function DamianMarleyPage() {
           <p className="ornament mb-3">A note</p>
           <p className="serif italic text-bark text-[15px] sm:text-[17px] leading-[1.7]">
             No studio publicity photos appear in this site by design.
-            Every image on Iyaaman is from a friend&apos;s iPhone,
+            Every image on Tuff Gong is from a friend&apos;s iPhone,
             not a press kit.
             For what Damian looks like on stage — you already know.
           </p>
@@ -378,7 +378,7 @@ export default function DamianMarleyPage() {
       <section className="px-5 sm:px-8 md:px-12 max-w-2xl mx-auto mt-20 text-center">
         <p className="ornament mb-3">For the youngest son, from the road of his oldest brother</p>
         <p className="serif italic text-bark text-[17px] sm:text-[19px] leading-[1.78]">
-          This page is part of Iyaaman — a gift for Kamal Soliman,
+          This page is part of Tuff Gong — a gift for Kamal Soliman,
           who has been on the road with you, and on the road of life
           with the man who built this site, for over thirty years.
           Thank you for the music, brother.
@@ -397,7 +397,7 @@ export default function DamianMarleyPage() {
             One love. One heart. Let&apos;s get together and feel all right.
           </p>
           <p className="mono text-[10px] tracking-widest text-cocoa uppercase mt-3">
-            Iyaaman · A demo built for Kamal Soliman · 2026
+            Tuff Gong · A demo built for Kamal Soliman · 2026
           </p>
         </div>
       </footer>

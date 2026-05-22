@@ -1,127 +1,124 @@
+// Rare / historic photos of Bob Marley and his family.
+// Bob+Damian slots come FIRST. External Wikimedia URLs render at runtime.
+
 export type RarePhoto = {
-  filename: string;        // drop file into public/marley/ with this exact name
-  caption: string;         // short editorial caption (<60 chars)
-  context: string;         // 1-2 sentences of historical context (<250 chars)
+  filename: string;        // local fallback in /public/marley/
+  url?: string;            // external URL (Wikimedia, etc.). Takes precedence.
+  caption: string;
+  context: string;
   year?: number;
-  source_hint?: string;    // where to look for the image
+  source_hint?: string;
+  credit?: string;
   tags?: string[];
 };
 
-// Curated rare/historic photographs.
-// The first three entries are deliberately Bob + Damian moments —
-// Damian was only three years old when Bob passed, so these are
-// the rarest and most personal images in the entire archive.
+const WC = (file: string, width = 1100) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=${width}`;
+
 export const rarePhotos: RarePhoto[] = [
-  // ---- Bob + Damian: the rarest and most precious ----
   {
     filename: "bob-damian-baby-1979.jpg",
     caption: "Bob with infant Damian",
-    context:
-      "Damian was born July 21, 1978. Only a handful of intimate father-son photos survive — he was just under three when Bob passed in May 1981.",
+    context: "Damian was born July 21, 1978. He was just under three when Bob passed. Photos of the two of them together are exceptionally rare.",
     year: 1979,
-    source_hint: "Marley family album / Cindy Breakspeare collection",
+    source_hint: "Marley family archive — ask Kamal",
+    credit: "© Marley family",
     tags: ["bob-damian", "rare", "family"],
   },
   {
     filename: "damian-at-nine-mile-grave.jpg",
-    caption: "Damian at Nine Mile, visiting his father",
-    context:
-      "Damian visiting the mausoleum at Nine Mile, St. Ann, where Bob is laid to rest. He has spoken often about returning to feel his father's presence.",
-    source_hint: "Marley family / Tuff Gong archive",
-    tags: ["bob-damian", "nine-mile", "family"],
+    caption: "Damian at Nine Mile",
+    context: "Damian visiting his father's mausoleum at Nine Mile, Saint Ann Parish — a pilgrimage every Marley child has made.",
+    source_hint: "Marley family archive",
+    credit: "© Marley family",
+    tags: ["bob-damian", "family"],
   },
   {
     filename: "bob-cindy-damian-1979.jpg",
-    caption: "Bob, Cindy Breakspeare and baby Damian",
-    context:
-      "A rare frame of Bob with Cindy Breakspeare, Miss World 1976, and their son Damian. Cindy and Bob's relationship was openly discussed in the Jamaican press.",
+    caption: "Bob, Cindy, Damian",
+    context: "Bob with Cindy Breakspeare (Miss World 1976) and infant Damian. Cindy and Bob were partners 1974–78.",
     year: 1979,
-    source_hint: "Cindy Breakspeare personal archive",
-    tags: ["bob-damian", "cindy", "rare", "family"],
+    source_hint: "Cindy Breakspeare's personal photos",
+    credit: "© Breakspeare family",
+    tags: ["bob-damian", "rare", "family"],
   },
-
-  // ---- Bob with the other Marley children ----
   {
-    filename: "bob-ziggy-shoulders-1976.jpg",
-    caption: "Bob with Ziggy on his shoulders",
-    context:
-      "An iconic father-son frame from the mid-70s at 56 Hope Road. Ziggy, born David Nesta in 1968, would go on to inherit the band leader role.",
+    filename: "bob-1976-press.jpg",
+    url: WC("Bob_Marley_1976_press_photo.jpg"),
+    caption: "Bob, 1976 press photo",
+    context: "Island Records publicity shot for the Rastaman Vibration tour. The year of the Smile Jamaica concert.",
     year: 1976,
-    source_hint: "Adrian Boot / Esther Anderson archive",
-    tags: ["bob-ziggy", "family", "hope-road"],
+    credit: "Island Records · public domain via Wikimedia",
+    tags: ["wikimedia", "press"],
   },
   {
-    filename: "bob-stephen-ziggy-1979.jpg",
-    caption: "Bob with Stephen and Ziggy",
-    context:
-      "Bob backstage with his two oldest sons by Rita. Stephen, then about seven, and Ziggy, ten — both already learning the songs that would become their inheritance.",
-    year: 1979,
-    source_hint: "Neville Garrick / Tuff Gong photo files",
-    tags: ["family", "stephen", "ziggy"],
+    filename: "bob-1977-press.jpg",
+    url: WC("Bob_Marley_1977_press_photo.jpg"),
+    caption: "Bob, 1977 press photo",
+    context: "Press portrait from the Exodus era — the album Time would later call Album of the Century.",
+    year: 1977,
+    credit: "Island Records · public domain via Wikimedia",
+    tags: ["wikimedia", "press"],
   },
   {
-    filename: "bob-rita-children-1979.jpg",
-    caption: "Bob, Rita and the Marley children",
-    context:
-      "A full family portrait from the Survival-era period, 1979. Rita, Cedella, Ziggy, Stephen and the younger ones, gathered at Hope Road.",
-    year: 1979,
-    source_hint: "Rita Marley Foundation archive",
-    tags: ["family", "rita", "portrait"],
-  },
-
-  // ---- Iconic Bob moments ----
-  {
-    filename: "one-love-peace-concert-1978.jpg",
-    caption: "One Love Peace Concert — joining Manley and Seaga",
-    context:
-      "April 22, 1978. Bob pulled rival prime ministers Michael Manley and Edward Seaga onstage at the National Stadium, joining their hands above his head.",
-    year: 1978,
-    source_hint: "Adrian Boot / Kate Simon — One Love Peace Concert",
-    tags: ["live", "iconic", "jamaica", "peace"],
-  },
-  {
-    filename: "bob-soccer-hope-road.jpg",
-    caption: "Bob playing football at 56 Hope Road",
-    context:
-      "Bob was a fierce footballer — he kept the yard at Hope Road active with daily matches. The toe injury that ignored him in 1977 came from this game.",
+    filename: "bob-performing-1976.jpg",
+    url: WC("Bob_Marley_performing_in_1976.jpg"),
+    caption: "On stage, 1976",
+    context: "Live during the Rastaman Vibration tour — Bob's first US Top 10 record.",
     year: 1976,
-    source_hint: "Neville Garrick photo files",
-    tags: ["hope-road", "football", "daily-life"],
+    credit: "Public domain via Wikimedia",
+    tags: ["wikimedia", "live"],
   },
   {
-    filename: "bob-lee-perry-black-ark.jpg",
-    caption: "Bob with Lee 'Scratch' Perry at Black Ark",
-    context:
-      "Recording in Lee Perry's mythical Black Ark studio in Washington Gardens. The sessions in 1970-71 produced Soul Rebels and Soul Revolution.",
-    year: 1971,
-    source_hint: "Lee Perry archive / David Burnett",
-    tags: ["studio", "wailers", "black-ark", "lee-perry"],
+    filename: "bob-neville-garrick-1976.jpg",
+    url: WC("Bob_Marley_by_Neville_Garrick_1976.jpg"),
+    caption: "Portrait by Neville Garrick",
+    context: "Neville Garrick was Bob's art director — designed every Wailers cover from Rastaman Vibration through Uprising.",
+    year: 1976,
+    credit: "Neville Garrick · via Wikimedia",
+    tags: ["wikimedia", "portrait", "iconic"],
   },
   {
-    filename: "bob-lyceum-london-1975.jpg",
-    caption: "Backstage at the Lyceum, London",
-    context:
-      "July 1975. The Lyceum shows produced the Live! album and the definitive No Woman, No Cry. The moment Bob broke through to the global rock audience.",
-    year: 1975,
-    source_hint: "Adrian Boot — Lyceum sessions",
-    tags: ["live", "london", "lyceum", "wailers"],
+    filename: "bob-i-threes.jpg",
+    url: WC("Bob_Marley_I_Threes.jpg"),
+    caption: "With the I-Threes",
+    context: "Rita Marley, Marcia Griffiths, and Judy Mowatt — the I-Threes, the harmonies that replaced Peter and Bunny from 1974.",
+    credit: "Public domain via Wikimedia",
+    tags: ["wikimedia", "wailers", "family"],
   },
   {
-    filename: "bob-zimbabwe-1980.jpg",
-    caption: "Zimbabwe Independence concert",
-    context:
-      "April 18, 1980. Bob performed at Rufaro Stadium for Zimbabwe's independence. He paid his own way and shipped the PA from England. His last major show abroad.",
+    filename: "bob-1980.jpg",
+    url: WC("Bob_Marley_in_1980.jpg"),
+    caption: "Bob in 1980",
+    context: "The last full year. April: Zimbabwe Independence. September: collapse in Central Park. The Uprising tour underway.",
     year: 1980,
-    source_hint: "Neville Garrick / Zimbabwe Independence archive",
-    tags: ["live", "zimbabwe", "iconic", "africa"],
+    credit: "Public domain via Wikimedia",
+    tags: ["wikimedia", "late"],
   },
   {
-    filename: "wailers-1973-original.jpg",
-    caption: "The original Wailers, 1973",
-    context:
-      "Bob, Peter Tosh, Bunny Wailer, with Aston and Carlton Barrett behind. The Catch a Fire / Burnin' lineup — the last year all three founding Wailers were on the same record.",
-    year: 1973,
-    source_hint: "Esther Anderson / Island Records archive",
-    tags: ["wailers", "peter", "bunny", "barrett", "rare"],
+    filename: "bob-grona-lund-1977.jpg",
+    url: WC("Bob_Marley_Grona_Lund_1977.jpg"),
+    caption: "Gröna Lund · Stockholm",
+    context: "Bob on the Exodus tour, Stockholm 1977. Gröna Lund — the same venue Bowie and Springsteen had played.",
+    year: 1977,
+    credit: "Public domain via Wikimedia",
+    tags: ["wikimedia", "live"],
+  },
+  {
+    filename: "bob-mausoleum-nine-mile.jpg",
+    url: WC("Bob_Marley%27s_Mausoleum.JPG"),
+    caption: "The Mausoleum at Nine Mile",
+    context: "Bob is buried at his birthplace in Saint Ann Parish, Jamaica. The chapel houses his casket. A working pilgrimage site.",
+    credit: "CC-BY-SA via Wikimedia",
+    tags: ["wikimedia", "shrine"],
+  },
+  {
+    filename: "bob-walk-of-fame.jpg",
+    url: WC("Hollywood_Walk_of_Fame_stars_-_Bob_Marley.jpg"),
+    caption: "Hollywood Walk of Fame",
+    context: "Bob's star, awarded 2001 — twenty years after his passing.",
+    year: 2001,
+    credit: "Public domain via Wikimedia",
+    tags: ["wikimedia", "legacy"],
   },
 ];

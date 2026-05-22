@@ -18,7 +18,7 @@ export default function TopNav() {
     <header className="sticky top-0 z-40 border-b border-bark/15 bg-sand/85 backdrop-blur">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-baseline gap-2 group">
-          <span className="display text-ember text-2xl tracking-tight">IYAAMAN</span>
+          <span className="display text-ember text-2xl tracking-tight">TUFF GONG</span>
           <span className="mono text-[10px] tracking-widest text-cocoa uppercase
                            hidden sm:inline">
             Bob Marley · The Complete Universe

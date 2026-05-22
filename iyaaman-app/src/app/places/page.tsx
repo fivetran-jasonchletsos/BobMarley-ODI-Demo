@@ -81,7 +81,7 @@ export default function PlacesPage() {
             One love. One heart. Let&apos;s get together and feel all right.
           </p>
           <p className="mono text-[10px] tracking-widest text-cocoa uppercase mt-3">
-            Iyaaman · A demo built for Kamal Soliman · 2026
+            Tuff Gong · A demo built for Kamal Soliman · 2026
           </p>
         </div>
       </footer>

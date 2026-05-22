@@ -15,9 +15,9 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const p = personBySlug(params.slug);
-  if (!p) return { title: "Not found · Iyaaman" };
+  if (!p) return { title: "Not found · Tuff Gong" };
   return {
-    title: `${p.name} · Iyaaman`,
+    title: `${p.name} · Tuff Gong`,
     description: p.bio.slice(0, 160),
   };
 }
@@ -267,7 +267,7 @@ export default function PersonPage({ params }: { params: { slug: string } }) {
             One love. One heart. Let&apos;s get together and feel all right.
           </p>
           <p className="mono text-[10px] tracking-widest text-cocoa uppercase mt-3">
-            Iyaaman · A demo built for Kamal Soliman · 2026
+            Tuff Gong · A demo built for Kamal Soliman · 2026
           </p>
         </div>
       </footer>

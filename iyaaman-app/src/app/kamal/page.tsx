@@ -4,9 +4,9 @@ import TopNav from "@/components/TopNav";
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata = {
-  title: "For Kamal · Iyaaman",
+  title: "For Kamal · Tuff Gong",
   description:
-    "Iyaaman is dedicated to Kamal Soliman — performer, tour manager to Damian Marley, " +
+    "Tuff Gong is dedicated to Kamal Soliman — performer, tour manager to Damian Marley, " +
     "and a best friend of more than thirty years.",
 };
 
@@ -71,7 +71,7 @@ export default function KamalPage() {
         </p>
 
         <p className="serif text-bark_2 text-[17px] leading-[1.78] mt-5">
-          This site — Iyaaman — is everything I could gather of the universe
+          This site — Tuff Gong — is everything I could gather of the universe
           you stand inside of every night.
           His music. His blood. His band. His road. The line that connects
           Nine Mile to the next soundcheck. Hold it gently. It&apos;s yours.
@@ -311,7 +311,7 @@ export default function KamalPage() {
           One love. One heart. Let&apos;s get together and feel all right.
         </p>
         <p className="mono text-[11px] tracking-widest text-ember uppercase mt-8">
-          ·  Iyaaman is yours, brother  ·
+          ·  Tuff Gong is yours, brother  ·
         </p>
       </section>
 
@@ -348,7 +348,7 @@ export default function KamalPage() {
             One love. One heart. Let&apos;s get together and feel all right.
           </p>
           <p className="mono text-[10px] tracking-widest text-cocoa uppercase mt-3">
-            Iyaaman · A demo built for Kamal Soliman · 2026
+            Tuff Gong · A demo built for Kamal Soliman · 2026
           </p>
         </div>
       </footer>

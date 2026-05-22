@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative pt-12 pb-10 sm:pt-16 sm:pb-14 px-5 sm:px-8 md:px-12 max-w-5xl mx-auto">
       {/* Ornament */}
       <p className="ornament mb-5">
-        Iyaaman · The Complete Universe
+        Tuff Gong · The Complete Universe
       </p>
 
       {/* Display title — heavyweight masthead */}
