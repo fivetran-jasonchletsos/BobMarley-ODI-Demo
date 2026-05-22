@@ -104,6 +104,19 @@ export default function Hero() {
         <p className="mono text-[10px] tracking-widest text-ash uppercase text-center mt-6 reveal reveal-8">
           ·  with love, from your oldest road  ·
         </p>
+
+        {/* For the kids in the back seat — Three Little Birds */}
+        <div className="mt-10 text-center reveal reveal-8">
+          <div className="inline-block border-t border-b border-jam_green/40 py-3 px-6 sm:px-10">
+            <p className="ornament mb-1 text-jam_green">For the back seat</p>
+            <p className="serif italic text-bark_2 text-sm sm:text-base leading-snug">
+              And for the kids on the school pickup ride — Bob has songs for them too.
+            </p>
+            <p className="mono text-[9.5px] tracking-widest text-cocoa uppercase mt-2">
+              Three Little Birds · Don&apos;t worry about a thing
+            </p>
+          </div>
+        </div>
       </div>
 
       <hr className="hr-rule mt-12 mb-2"/>

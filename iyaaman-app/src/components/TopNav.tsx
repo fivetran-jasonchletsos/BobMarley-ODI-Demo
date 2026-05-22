@@ -1,18 +1,16 @@
 import Link from "next/link";
 
+// Primary nav — 7 destinations, single line on desktop. Secondary pages
+// (Family, Studios, Places, Timeline, Rastafari, Legacy, Related) live in
+// the homepage hub tracklist.
 const NAV = [
   { href: "/",              label: "Home" },
   { href: "/kamal",         label: "For Kamal" },
   { href: "/tree",          label: "The Tree" },
-  { href: "/family",        label: "Family" },
   { href: "/damian-marley", label: "Damian" },
   { href: "/discography",   label: "Discography" },
-  { href: "/related",       label: "Related" },
-  { href: "/ask",           label: "Ask" },
   { href: "/wailers",       label: "Wailers" },
-  { href: "/studios",       label: "Studios" },
-  { href: "/timeline",      label: "Timeline" },
-  { href: "/rastafari",     label: "Rastafari" },
+  { href: "/ask",           label: "Ask" },
 ];
 
 export default function TopNav() {
