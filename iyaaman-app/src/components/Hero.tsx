@@ -1,0 +1,105 @@
+import Link from "next/link";
+import { dedication } from "@/lib/dedication";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export default function Hero() {
+  return (
+    <section className="relative pt-12 pb-10 sm:pt-16 sm:pb-14 px-5 sm:px-8 md:px-12 max-w-5xl mx-auto">
+      {/* Ornament */}
+      <p className="ornament mb-5">
+        Iyaaman · The Complete Universe
+      </p>
+
+      {/* Display title — heavyweight masthead */}
+      <h1 className="display text-bark leading-[0.92] tracking-tight
+                     text-[58px] sm:text-[88px] md:text-[120px]">
+        BOB<br/>MARLEY
+      </h1>
+
+      <p className="serif italic text-cocoa text-lg sm:text-xl mt-4 max-w-2xl leading-relaxed">
+        His music. His family. His band. His studios. His road.
+        His blood. And everyone he made along the way.
+      </p>
+
+      {/* Pill stats */}
+      <div className="mt-8 flex flex-wrap gap-x-7 gap-y-2 text-bark mono text-[11px] tracking-widest">
+        <span><b className="text-jam_green text-base mono">36</b>&nbsp;&nbsp;YEARS</span>
+        <span><b className="text-jam_gold text-base mono">75M+</b>&nbsp;&nbsp;RECORDS SOLD</span>
+        <span><b className="text-jam_red text-base mono">14</b>&nbsp;&nbsp;PUBLIC CHILDREN</span>
+        <span><b className="text-jam_green text-base mono">19</b>&nbsp;&nbsp;GRAMMYS IN THE FAMILY</span>
+      </div>
+
+      <div className="tricolor-bar-thin mt-10 mb-10"/>
+
+      {/* ============================ DEDICATION ============================ */}
+      <div className="mx-auto max-w-3xl">
+
+        {/* Top ornament line — long horizontal flourish */}
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <span className="block h-px w-12 bg-gold/50"/>
+          <p className="ornament">Dedicated to a best friend</p>
+          <span className="block h-px w-12 bg-gold/50"/>
+        </div>
+
+        {/* The name — center stage, heavy, ember */}
+        <h2 className="display text-jam_red text-center
+                       text-[44px] sm:text-[64px] md:text-[80px]
+                       leading-[0.95] tracking-tight mt-2">
+          KAMAL<br className="sm:hidden"/>
+          <span className="sm:ml-4">SOLIMAN</span>
+        </h2>
+
+        <p className="serif italic text-cocoa text-sm sm:text-base text-center mt-3">
+          {dedication.relationship}
+        </p>
+
+        {/* Body — letterpress feel, narrow column, generous leading */}
+        <p className="serif text-bark_2 mt-7 leading-[1.78] text-[15.5px] sm:text-[16.5px] text-center
+                      max-w-2xl mx-auto">
+          {dedication.body}
+        </p>
+
+        {/* Primary Bob quote — set as a true epigraph */}
+        <figure className="mt-10 max-w-2xl mx-auto">
+          <blockquote className="serif text-bark text-2xl sm:text-3xl leading-snug italic text-center
+                                 relative px-6 sm:px-10">
+            <span className="display text-gold/50 text-7xl absolute -left-2 -top-4 leading-none select-none">“</span>
+            {dedication.quote.text}
+            <span className="display text-gold/50 text-7xl absolute -right-2 -bottom-10 leading-none select-none">”</span>
+          </blockquote>
+          <figcaption className="mt-6 mono text-[10.5px] tracking-widest text-cocoa uppercase text-center">
+            — {dedication.quote.author}
+            <span className="text-ash"> · {dedication.quote.source}</span>
+          </figcaption>
+        </figure>
+
+        {/* Secondary Damian quote — quieter, set off to the side */}
+        <figure className="mt-12 max-w-xl mx-auto border-l-2 border-leaf pl-5 sm:pl-6">
+          <blockquote className="serif text-bark_2 text-base sm:text-lg leading-snug italic">
+            &ldquo;{dedication.secondary_quote.text}&rdquo;
+          </blockquote>
+          <figcaption className="mt-2 mono text-[10px] tracking-widest text-cocoa uppercase">
+            — {dedication.secondary_quote.author}
+            <span className="text-ash"> · {dedication.secondary_quote.source}</span>
+          </figcaption>
+        </figure>
+
+        {/* CTA to the full dedication page */}
+        <div className="text-center mt-10">
+          <Link href="/kamal/"
+                className="inline-block border border-ember/40 bg-ember/8 hover:bg-ember/14 text-ember
+                           mono text-[11px] tracking-widest uppercase px-5 py-2.5 transition-colors rounded">
+            Read the full dedication →
+          </Link>
+        </div>
+
+        <p className="mono text-[10px] tracking-widest text-ash uppercase text-center mt-6">
+          ·  with love, from your oldest road  ·
+        </p>
+      </div>
+
+      <hr className="hr-rule mt-12 mb-2"/>
+    </section>
+  );
+}

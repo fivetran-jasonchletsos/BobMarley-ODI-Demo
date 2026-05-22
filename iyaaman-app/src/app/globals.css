@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,700;9..144,900&family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+html, body { background: theme('colors.sand'); color: theme('colors.bark'); }
+
+/* Subtle paper texture via SVG-grain noise — gives the warm, off-press feel. */
+body {
+  background-image:
+    radial-gradient(rgba(58,38,20,0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+}
+
+/* Hand-drawn rule, used as section divider. */
+.hr-rule {
+  border: 0;
+  height: 18px;
+  background-image:
+    repeating-linear-gradient(90deg,
+      theme('colors.bark') 0 18px,
+      transparent 18px 28px);
+  background-size: 28px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  opacity: 0.32;
+  margin: 1.4rem 0;
+}
+
+/* Reggae tricolor accent bar — green / gold / red, thin, editorial. */
+.tricolor-bar {
+  display: block;
+  height: 4px;
+  background-image: linear-gradient(90deg,
+    theme('colors.jam_green') 0 33.3%,
+    theme('colors.jam_gold')  33.3% 66.6%,
+    theme('colors.jam_red')   66.6% 100%);
+  margin: 1.2rem 0;
+}
+.tricolor-bar-thin {
+  display: block;
+  height: 2px;
+  background-image: linear-gradient(90deg,
+    theme('colors.jam_green') 0 33.3%,
+    theme('colors.jam_gold')  33.3% 66.6%,
+    theme('colors.jam_red')   66.6% 100%);
+  margin: 0.8rem 0;
+  opacity: 0.7;
+}
+/* Tricolor accent dot/ornament — left margin marker. */
+.tricolor-mark::before {
+  content: "";
+  display: inline-block;
+  width: 14px; height: 3px;
+  margin-right: 0.5em;
+  vertical-align: 0.22em;
+  background: linear-gradient(90deg,
+    theme('colors.jam_green') 0 33%,
+    theme('colors.jam_gold')  33% 66%,
+    theme('colors.jam_red')   66% 100%);
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.display { font-family: 'Anton', 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Drop-cap for editorial intro paragraphs. */
+.drop-cap::first-letter {
+  font-family: 'Anton', sans-serif;
+  font-size: 4.4em;
+  line-height: 0.86;
+  float: left;
+  padding: 0.12em 0.18em 0 0;
+  color: theme('colors.jam_green');
+}
+
+/* Yellow underline marker for inline highlights. */
+.mark-gold {
+  background-image: linear-gradient(180deg, transparent 60%, theme('colors.gold') 60% 92%, transparent 92%);
+  padding: 0 1px;
+}
+.mark-leaf {
+  background-image: linear-gradient(180deg, transparent 60%, rgba(59,106,59,0.4) 60% 92%, transparent 92%);
+}
+.mark-ember {
+  background-image: linear-gradient(180deg, transparent 60%, rgba(196,74,42,0.35) 60% 92%, transparent 92%);
+}
+
+/* Inline page link style — editorial, restrained. */
+.link-inline {
+  color: theme('colors.ember');
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.15s;
+}
+.link-inline:hover { opacity: 0.7; }
+
+/* Section ornament — used above section heads. */
+.ornament {
+  font-family: 'Anton', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: theme('colors.gold');
+}
