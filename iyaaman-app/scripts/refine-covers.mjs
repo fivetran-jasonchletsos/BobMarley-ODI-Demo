@@ -137,11 +137,17 @@ async function loadAlbumMeta() {
 
 async function main() {
   const albumMeta = await loadAlbumMeta();
-  const manifest = {};
+  // Load existing manifest so we don't redo HITs.
+  const manifestPath = path.join(coversDir, "manifest.json");
+  let manifest = {};
+  try {
+    manifest = JSON.parse(await fs.readFile(manifestPath, "utf8"));
+  } catch {}
   let hits = 0;
   let misses = 0;
 
   for (const [slug, rule] of Object.entries(ALBUM_RULES)) {
+    if (manifest[slug]?.found) { hits++; continue; }
     const meta = albumMeta.get(slug);
     if (!meta) continue;
 
@@ -184,7 +190,7 @@ async function main() {
           best = r;
         }
       }
-      await sleep(150);
+      await sleep(900);
       if (best && bestScore >= 15) break; // good enough
     }
 

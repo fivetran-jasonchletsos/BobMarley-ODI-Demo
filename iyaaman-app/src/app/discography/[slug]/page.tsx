@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import TopNav from "@/components/TopNav";
+import AlbumCover, { spotifySearchUrl } from "@/components/AlbumCover";
 import { albums, albumBySlug, albumsByArtist, type Album } from "@/lib/albums";
 import { personBySlug, type Person } from "@/lib/people";
 
