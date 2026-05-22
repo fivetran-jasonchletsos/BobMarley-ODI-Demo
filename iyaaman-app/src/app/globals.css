@@ -216,3 +216,51 @@ body::before {
   font-feature-settings: "ss01" on, "ss02" on, "ss03" on;
   letter-spacing: -0.012em;
 }
+
+/* ─── Connector / data-source pill ──────────────────────────────────────
+   Distinct from body text. Used in ask/page.tsx architecture block. */
+.connector-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  background: rgba(13, 26, 16, 0.06);
+  border: 1px solid rgba(13, 26, 16, 0.14);
+  color: theme('colors.bark_2');
+  padding: 0.2em 0.55em;
+  border-radius: 3px;
+}
+
+/* ─── "Open in Fivetran" CTA — ember, arrow-external treatment ───────── */
+.fivetran-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: theme('colors.ember');
+  border: 1px solid rgba(192, 56, 43, 0.38);
+  padding: 0.35em 0.8em;
+  border-radius: 3px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.fivetran-cta:hover {
+  background: theme('colors.ember');
+  color: theme('colors.sand');
+}
+
+/* ─── Section-rule variant — gold-tinted, slightly heavier ───────────── */
+.hr-rule-gold {
+  border: 0;
+  height: 18px;
+  background-image:
+    repeating-linear-gradient(90deg,
+      theme('colors.gold') 0 14px,
+      transparent 14px 24px);
+  background-size: 24px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  opacity: 0.4;
+  margin: 1.4rem 0;
+}

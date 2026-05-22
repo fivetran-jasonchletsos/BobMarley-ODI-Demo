@@ -589,34 +589,94 @@ export default function AskPage() {
       <main className="max-w-6xl mx-auto px-5 sm:px-8 md:px-12 pb-16 pt-8">
         {/* Editorial hero */}
         <section className="border-b border-bark/15 pb-8 mb-10">
-          <p className="ornament mb-3">Ask the Universe</p>
-          <h1 className="display text-bark text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.95]">
-            Cortex Analyst
-          </h1>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-0">
+            <div>
+              <p className="ornament mb-3">Ask the Universe</p>
+              <h1 className="display text-bark text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.95]">
+                Cortex Analyst
+              </h1>
+            </div>
+            <p className="mono text-[10px] tracking-widest text-cocoa uppercase hidden sm:block pb-1">
+              NL &rarr; SQL &rarr; Answer
+            </p>
+          </div>
           <p className="serif italic text-cocoa text-lg sm:text-xl mt-4 max-w-3xl leading-relaxed">
             Natural language &rarr; SQL &rarr; answer. Powered by Snowflake Cortex
-            Analyst on top of our dbt semantic model — the same gold marts that feed
-            this site.
+            Analyst on top of our dbt semantic model &mdash; the same gold marts that feed
+            this site, synced nightly via Fivetran.
           </p>
           <div className="tricolor-bar-thin mt-5"/>
         </section>
 
         {/* Architecture footnote */}
-        <section
-          className="mb-10 border border-bark/15 bg-sand_2/40 rounded p-5"
-        >
-          <p className="ornament mb-2">Tables you can ask about</p>
-          <p className="text-sm text-bark_2 leading-relaxed">
-            <span className="mono text-[12px]">gold.dim_album</span>,{" "}
-            <span className="mono text-[12px]">gold.dim_person</span>,{" "}
-            <span className="mono text-[12px]">gold.fct_appearance</span>,{" "}
-            <span className="mono text-[12px]">gold.fct_grammy</span>,{" "}
-            <span className="mono text-[12px]">gold.bridge_album_artist</span>.{" "}
-            Generated nightly by dbt from Spotify, MusicBrainz, and Wikidata.
-            Cortex Analyst reads the YAML semantic model — column descriptions,
-            verified queries, allowed metrics — and translates plain-English
-            questions into trusted SQL against these tables.
+        <section className="mb-10 border border-bark/15 bg-sand_2/40 rounded p-5">
+          <p className="ornament mb-3">Gold-layer tables you can ask about</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {["gold.dim_album", "gold.dim_person", "gold.bridge_album_artist"].map((t) => (
+              <span key={t} className="mono text-[11px] bg-bark/8 border border-bark/18 text-bark_2 px-2.5 py-1 rounded">
+                {t}
+              </span>
+            ))}
+          </div>
+          <p className="text-sm text-bark_2 leading-relaxed mb-6">
+            Generated nightly by dbt from three Fivetran-synced sources. Cortex Analyst reads
+            the YAML semantic model — column descriptions, verified queries, allowed metrics —
+            and translates plain-English questions into trusted SQL against these tables.
           </p>
+
+          {/* Fivetran connector cards */}
+          <p className="ornament mb-3">Fivetran connectors powering this data</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+            {[
+              {
+                name:         "Spotify",
+                fivetran_id:  "spotify_marley_01",
+                connector:    "spotify",
+                description:  "Album metadata, track lists, release dates, popularity scores",
+                href:         "https://fivetran.com/connectors/spotify",
+              },
+              {
+                name:         "MusicBrainz",
+                fivetran_id:  "musicbrainz_marley_01",
+                connector:    "webhooks",
+                description:  "Canonical artist slugs, MBID identifiers, relationships",
+                href:         "https://fivetran.com/connectors/webhooks",
+              },
+              {
+                name:         "Wikidata",
+                fivetran_id:  "wikidata_marley_01",
+                connector:    "webhooks",
+                description:  "Grammy awards, family relationships, birth/death records",
+                href:         "https://fivetran.com/connectors/webhooks",
+              },
+            ].map((c) => (
+              <div key={c.fivetran_id} className="border border-bark/20 bg-sand/60 rounded p-3 flex flex-col gap-2">
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="display text-bark text-lg leading-none tracking-tight">{c.name}</span>
+                  <span className="mono text-[9px] tracking-widest uppercase text-leaf bg-leaf/10 border border-leaf/25 px-2 py-0.5 rounded-full">
+                    active
+                  </span>
+                </div>
+                <p className="mono text-[9px] tracking-widest text-cocoa uppercase">
+                  id: {c.fivetran_id}
+                </p>
+                <p className="serif text-bark_2 text-xs leading-snug">{c.description}</p>
+                <a
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center gap-1.5 mono text-[10px] tracking-widest uppercase
+                             text-ember border border-ember/40 hover:bg-ember hover:text-sand
+                             px-3 py-1.5 rounded transition-colors self-start"
+                >
+                  Open in Fivetran
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Question chips */}

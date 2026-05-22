@@ -250,10 +250,17 @@ export default function DiscographyPage() {
 
       {/* Editorial header */}
       <section className="px-5 sm:px-8 md:px-12 max-w-6xl mx-auto pt-10 pb-6">
-        <p className="ornament mb-3 reveal reveal-1">Every Marley Record</p>
-        <h1 className="display headline-tight text-bark text-4xl sm:text-6xl md:text-7xl tracking-tight leading-none reveal reveal-2">
-          Discography
-        </h1>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-2">
+          <div>
+            <p className="ornament mb-3 reveal reveal-1">Every Marley Record</p>
+            <h1 className="display headline-tight text-bark text-4xl sm:text-6xl md:text-7xl tracking-tight leading-none reveal reveal-2">
+              Discography
+            </h1>
+          </div>
+          <p className="mono text-[10px] tracking-widest text-cocoa uppercase hidden sm:block pb-1 reveal reveal-2">
+            1965 &ndash; present &middot; three generations
+          </p>
+        </div>
         <p className="serif italic text-bark_2 text-base sm:text-xl mt-5 max-w-3xl leading-relaxed reveal reveal-3">
           From <em>The Wailing Wailers</em> (1965) to the next generation.
           Sixteen Bob records, twenty-three from his children, three from his
