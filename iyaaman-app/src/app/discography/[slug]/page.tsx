@@ -5,6 +5,7 @@ import TopNav from "@/components/TopNav";
 import AlbumCover, { spotifySearchUrl } from "@/components/AlbumCover";
 import { albums, albumBySlug, albumsByArtist, type Album } from "@/lib/albums";
 import { personBySlug, type Person } from "@/lib/people";
+import { relatedFor } from "@/lib/related";
 
 type Params = { slug: string };
 
@@ -225,6 +226,70 @@ export default function AlbumPage({ params }: { params: Params }) {
           </section>
         </>
       )}
+
+      {/* Related albums — Jaccard similarity */}
+      {(() => {
+        const related = relatedFor(album.slug);
+        if (related.length === 0) return null;
+        return (
+          <>
+            <hr className="hr-rule max-w-6xl mx-auto" />
+            <section className="px-5 sm:px-8 md:px-12 max-w-6xl mx-auto py-8">
+              <div className="flex items-baseline justify-between mb-5">
+                <div>
+                  <p className="ornament mb-3">Similarity</p>
+                  <h2 className="display text-bark text-3xl tracking-tight">
+                    Related Albums
+                  </h2>
+                </div>
+                <Link
+                  href="/related/"
+                  className="mono text-[9px] uppercase tracking-widest text-cocoa hover:text-ember transition-colors hidden sm:block"
+                >
+                  Full map
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-7">
+                {related.slice(0, 8).map((nb) => (
+                  <article key={nb.slug} className="group flex flex-col">
+                    <Link
+                      href={`/discography/${nb.slug}/`}
+                      className="block border-2 border-bark/20 hover:border-ember/70 overflow-hidden transition-all hover:shadow-lg"
+                      aria-label={`Open details for ${nb.album.title}`}
+                    >
+                      <AlbumCover album={nb.album} size="card" showSpotifyButton={false} />
+                    </Link>
+                    <div className="mt-2.5">
+                      <Link
+                        href={`/discography/${nb.slug}/`}
+                        className="block group-hover:text-ember transition-colors"
+                      >
+                        <h3 className="serif text-bark text-sm leading-tight">
+                          {nb.album.title}
+                        </h3>
+                      </Link>
+                      <p className="mono text-[9px] tracking-widest uppercase text-cocoa mt-1 truncate">
+                        {nb.album.artistDisplay}
+                      </p>
+                      <p className="mono text-[9px] tracking-widest uppercase text-bark_2 mt-0.5 truncate">
+                        {nb.why}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              <div className="mt-6 text-center sm:hidden">
+                <Link
+                  href="/related/"
+                  className="mono text-[9px] uppercase tracking-widest text-cocoa hover:text-ember transition-colors"
+                >
+                  View full similarity map
+                </Link>
+              </div>
+            </section>
+          </>
+        );
+      })()}
 
       <footer className="border-t border-bark/15 bg-sand_2/40 mt-6">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-8 text-center">
