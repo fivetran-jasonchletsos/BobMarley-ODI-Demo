@@ -366,7 +366,7 @@ ORDER  BY generation;`,
         { label: "Total below Bob", value: FAMILY_TOTAL_BELOW_BOB },
       ],
     },
-    summary: `Bob fathered ${BOB_CHILDREN.length} publicly-acknowledged children by seven women between 1964 and 1981. From them came ${BOB_GRANDCHILDREN.length} grandchildren tracked in this catalog — and the real number keeps growing, with great-grandchildren now in their teens. In thirty-six years he seeded a dynasty of ${FAMILY_TOTAL_BELOW_BOB}+ direct descendants who hold ${GRAMMY_ALBUMS.length} Grammys between them and still tour under his name. The bloodline is the impact. The records are the receipts.`,
+    summary: `Bob acknowledged eleven biological children by seven women between 1964 and 1981, plus Sharon (Rita's daughter, raised in the household). The tree below him in this catalog totals ${BOB_CHILDREN.length} children and ${BOB_GRANDCHILDREN.length} grandchildren — and the real number keeps growing, with great-grandchildren now in their teens. In thirty-six years he seeded a dynasty of ${FAMILY_TOTAL_BELOW_BOB}+ direct descendants who hold ${GRAMMY_ALBUMS.length} Grammys between them and still tour under his name. The bloodline is the impact. The records are the receipts.`,
   },
   {
     id: "children-by-fan-out",
