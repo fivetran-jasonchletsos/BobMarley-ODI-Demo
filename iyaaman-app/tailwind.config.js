@@ -2,6 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         // Jamaica + reggae palette — black / green / gold / red — tuned editorial
@@ -25,13 +33,31 @@ module.exports = {
         jam_black: "#0d1a10",
       },
       fontFamily: {
-        serif:  ["'Fraunces', Georgia, serif"],
-        display: ["'Anton', 'Bebas Neue', sans-serif"],
-        sans:   ["'Inter', system-ui, sans-serif"],
-        mono:   ["'JetBrains Mono', ui-monospace, monospace"],
+        // Body: Fraunces — variable serif with personality, our distinctive default.
+        serif:  ["'Fraunces', 'Hoefler Text', Georgia, serif"],
+        // Display: Anton — heavy condensed sans, masthead duty.
+        display: ["'Anton', 'Bebas Neue', 'Oswald', sans-serif"],
+        // "sans" alias now ALSO points at Fraunces — kill Inter site-wide.
+        sans:   ["'Fraunces', 'Hoefler Text', Georgia, serif"],
+        // Mono: DM Mono — distinctive geometric mono, replaces JetBrains.
+        mono:   ["'DM Mono', 'IBM Plex Mono', ui-monospace, monospace"],
       },
       letterSpacing: {
         widest: "0.32em",
+      },
+      keyframes: {
+        fadeUp: {
+          "0%":   { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%":   { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        fadeUp: "fadeUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both",
+        fadeIn: "fadeIn 0.9s ease-out both",
       },
     },
   },

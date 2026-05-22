@@ -268,12 +268,12 @@ export default function TimelinePage() {
 
       {/* Hero */}
       <section className="px-5 sm:px-8 md:px-12 max-w-6xl mx-auto pt-10 pb-6">
-        <p className="ornament mb-3">A life, year by year</p>
-        <h1 className="display text-bark text-5xl sm:text-7xl md:text-8xl tracking-tight leading-[0.95]">
+        <p className="ornament mb-3 reveal reveal-1">A life, year by year</p>
+        <h1 className="display headline-tight text-bark text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.95] reveal reveal-2">
           Bob&apos;s Life
           <span className="block text-ember">Year by Year</span>
         </h1>
-        <p className="serif text-bark_2 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
+        <p className="serif text-bark_2 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed reveal reveal-3">
           Thirty-six years. {totalEvents} life moments and {totalAlbums} albums,
           laid out decade by decade. Scroll.
         </p>

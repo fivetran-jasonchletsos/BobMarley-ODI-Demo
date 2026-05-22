@@ -250,11 +250,11 @@ export default function DiscographyPage() {
 
       {/* Editorial header */}
       <section className="px-5 sm:px-8 md:px-12 max-w-6xl mx-auto pt-10 pb-6">
-        <p className="ornament mb-3">Every Marley Record</p>
-        <h1 className="display text-bark text-5xl sm:text-6xl md:text-7xl tracking-tight leading-none">
+        <p className="ornament mb-3 reveal reveal-1">Every Marley Record</p>
+        <h1 className="display headline-tight text-bark text-4xl sm:text-6xl md:text-7xl tracking-tight leading-none reveal reveal-2">
           Discography
         </h1>
-        <p className="serif italic text-bark_2 text-lg sm:text-xl mt-5 max-w-3xl leading-relaxed">
+        <p className="serif italic text-bark_2 text-base sm:text-xl mt-5 max-w-3xl leading-relaxed reveal reveal-3">
           From <em>The Wailing Wailers</em> (1965) to the next generation.
           Sixteen Bob records, twenty-three from his children, three from his
           grandchildren. Click any tile to filter the catalog below.

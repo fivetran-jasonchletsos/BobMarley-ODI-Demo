@@ -50,12 +50,13 @@ export default function KamalPage() {
 
       {/* ===== HERO ===== */}
       <section className="pt-10 pb-4 px-5 sm:px-8 md:px-12 max-w-5xl mx-auto">
-        <p className="ornament mb-3 tricolor-mark">For my best friend</p>
-        <h1 className="display text-jam_red leading-[0.92] tracking-tight
-                       text-[64px] sm:text-[100px] md:text-[140px]">
+        <p className="ornament mb-3 tricolor-mark reveal reveal-1">For my best friend</p>
+        <h1 className="display headline-tight text-jam_red leading-[0.92] tracking-tight
+                       text-[48px] xs:text-[64px] sm:text-[100px] md:text-[140px]
+                       reveal reveal-2">
           KAMAL<br/>SOLIMAN
         </h1>
-        <p className="serif italic text-cocoa text-lg mt-4">
+        <p className="serif italic text-cocoa text-base sm:text-lg mt-4 reveal reveal-3">
           Thirty years. One road. Built for you, brother.
         </p>
       </section>

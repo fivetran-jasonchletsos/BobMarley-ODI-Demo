@@ -310,9 +310,10 @@ export default function FamilyGraph() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5">
-        {/* Graph SVG */}
-        <div className="border border-bark/20 bg-sand_2/40 overflow-hidden rounded">
-          <svg viewBox="0 0 1000 800" width="100%" height="auto" role="img"
+        {/* Graph SVG — mobile gets horizontal scroll so the 1000-wide layout doesn't crush */}
+        <div className="border border-bark/20 bg-sand_2/40 overflow-x-auto md:overflow-hidden rounded">
+          <svg viewBox="0 0 1000 800" role="img"
+               className="w-[760px] sm:w-full h-auto"
                aria-label="Bob Marley family tree with linked albums">
             {/* Edges */}
             {edges.map((e, i) => {
@@ -375,14 +376,14 @@ export default function FamilyGraph() {
                   )}
                   {n.kind !== "album" && n.sublabel && (
                     <text textAnchor="middle" y={n.r + 26}
-                          fontFamily="JetBrains Mono, monospace" fontSize={8}
+                          fontFamily="DM Mono, monospace" fontSize={8}
                           fill="#7a5530" letterSpacing="0.08em">
                       {n.sublabel}
                     </text>
                   )}
                   {n.kind === "album" && cur && (
                     <text textAnchor="middle" y={-n.r - 4}
-                          fontFamily="JetBrains Mono, monospace" fontSize={8}
+                          fontFamily="DM Mono, monospace" fontSize={8}
                           fill="#3a2614">
                       {n.album_year}
                     </text>

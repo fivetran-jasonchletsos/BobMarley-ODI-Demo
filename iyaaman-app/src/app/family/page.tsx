@@ -106,11 +106,11 @@ export default function FamilyPage() {
       <TopNav />
 
       <section className="px-5 sm:px-8 md:px-12 max-w-6xl mx-auto pt-8 pb-6">
-        <p className="ornament mb-3">The Marley Universe</p>
-        <h1 className="display text-bark text-5xl sm:text-6xl md:text-7xl tracking-tight leading-none">
+        <p className="ornament mb-3 reveal reveal-1">The Marley Universe</p>
+        <h1 className="display headline-tight text-bark text-4xl sm:text-6xl md:text-7xl tracking-tight leading-none reveal reveal-2">
           Family Tree
         </h1>
-        <p className="serif italic text-cocoa text-base sm:text-lg mt-4 max-w-3xl leading-relaxed">
+        <p className="serif italic text-cocoa text-base sm:text-lg mt-4 max-w-3xl leading-relaxed reveal reveal-3">
           Bob at the center. Three generations of music in his blood and the
           circle around him — partners, Wailers, I-Threes, producers, kin by
           blood, kin by sound.

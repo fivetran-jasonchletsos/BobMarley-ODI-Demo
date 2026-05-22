@@ -33,7 +33,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {HUB.map((h) => (
             <Link key={h.href} href={h.href}
-                  className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 transition-colors rounded">
+                  className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 rounded lift">
               <p className="ornament">{h.title.split(" ")[0]}</p>
               <h3 className="serif text-bark text-xl font-bold mt-1">{h.title}</h3>
               <p className="text-bark_2 text-sm mt-2 leading-relaxed">{h.blurb}</p>

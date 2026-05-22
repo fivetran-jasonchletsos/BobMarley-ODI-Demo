@@ -15,22 +15,26 @@ export default function DamianMarleyPage() {
 
       {/* ====================== HERO ====================== */}
       <section className="relative pt-10 pb-8 sm:pt-14 px-5 sm:px-8 md:px-12 max-w-5xl mx-auto">
-        <p className="ornament mb-4 tricolor-mark">The youngest son</p>
-        <h1 className="display text-ember leading-[0.92] tracking-tight
-                       text-[64px] sm:text-[96px] md:text-[120px]">
+        <p className="ornament mb-4 tricolor-mark reveal reveal-1">The youngest son</p>
+        <h1 className="display headline-tight text-ember leading-[0.92] tracking-tight
+                       text-[52px] xs:text-[64px] sm:text-[96px] md:text-[120px]
+                       reveal reveal-2">
           DAMIAN
         </h1>
         <p className="display text-bark mt-2 tracking-tight
-                      text-[28px] sm:text-[44px] md:text-[56px] leading-none">
+                      text-[22px] xs:text-[28px] sm:text-[44px] md:text-[56px] leading-none
+                      reveal reveal-3">
           &ldquo;JR. GONG&rdquo; MARLEY
         </p>
-        <p className="serif italic text-cocoa text-lg sm:text-xl mt-6 max-w-2xl leading-relaxed">
+        <p className="serif italic text-cocoa text-base sm:text-xl mt-6 max-w-2xl leading-relaxed
+                      reveal reveal-4">
           Bob&apos;s youngest acknowledged son. Born to a Miss World, raised in Kingston,
           made the album the family always knew he could.
           The one who hung the sound on hip-hop&apos;s chassis.
         </p>
 
-        <div className="mt-7 flex flex-wrap gap-x-7 gap-y-2 text-bark mono text-[11px] tracking-widest">
+        <div className="mt-7 flex flex-wrap gap-x-5 sm:gap-x-7 gap-y-2 text-bark mono text-[10px] sm:text-[11px] tracking-widest
+                        reveal reveal-5">
           <span><b className="text-ember text-base mono">5&times;</b>&nbsp;&nbsp;GRAMMY WINNER</span>
           <span><b className="text-ember text-base mono">5</b>&nbsp;&nbsp;STUDIO LPS</span>
           <span><b className="text-ember text-base mono">21·07·1978</b>&nbsp;&nbsp;BORN</span>
@@ -419,7 +423,7 @@ function AlbumBlock({
   awards?: string;
 }) {
   return (
-    <article className="border border-bark/15 bg-sand_2/40 rounded p-5 sm:p-7 hover:border-ember/50 transition-colors">
+    <article className="border border-bark/15 bg-sand_2/40 rounded p-5 sm:p-7 hover:border-ember/50 lift">
       <div className="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-4 sm:gap-7">
         <div>
           <p className="mono text-ember text-2xl sm:text-3xl leading-none">{year}</p>
@@ -459,7 +463,7 @@ function FamilyCard({
   return (
     <Link
       href={href}
-      className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 transition-colors rounded"
+      className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 rounded lift"
     >
       <p className="ornament">{ornament}</p>
       <h3 className="serif text-bark text-lg font-bold mt-1">{name}</h3>
@@ -480,7 +484,7 @@ function DiscoCard({
   return (
     <Link
       href={`/discography/${slug}/`}
-      className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 transition-colors rounded"
+      className="block border border-bark/15 bg-sand_2/40 p-4 hover:border-ember/60 hover:bg-sand_2/70 rounded lift"
     >
       <p className="mono text-ember text-sm">{year}</p>
       <h3 className="display text-bark text-xl tracking-tight mt-1">{title}</h3>

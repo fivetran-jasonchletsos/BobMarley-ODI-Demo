@@ -2,16 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,700;9..144,900&family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* ─── Distinctive font stack ────────────────────────────────────────────
+   Body: Fraunces (variable, full personality serif).
+   Display: Anton (heavy condensed sans for mastheads).
+   Mono: DM Mono (geometric, more character than JetBrains).
+   No Inter, no Roboto, no system. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,700&family=Anton&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
-html, body { background: theme('colors.sand'); color: theme('colors.bark'); }
+:root {
+  --font-serif:   'Fraunces', 'Hoefler Text', Georgia, serif;
+  --font-display: 'Anton', 'Bebas Neue', 'Oswald', sans-serif;
+  --font-mono:    'DM Mono', 'IBM Plex Mono', ui-monospace, monospace;
+}
 
-/* Subtle paper texture via SVG-grain noise — gives the warm, off-press feel. */
+html, body {
+  color: theme('colors.bark');
+  /* Slight Fraunces axis tweak — bumps optical size and softens the SOFT axis
+     for a warmer letterpress feel. */
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+}
+
+/* ─── Atmospheric layered background ─────────────────────────────────────
+   1) Warm sand base
+   2) Soft warm-gold radial glow from top-center (Caribbean sunset)
+   3) Subtle film grain via inline SVG noise data-URI
+   4) A faint paper-texture dot pattern, preserved from the editorial spec
+   The whole stack is composited so the page never reads as a flat color. */
 body {
+  background-color: theme('colors.sand');
   background-image:
-    radial-gradient(rgba(58,38,20,0.04) 1px, transparent 1px);
-  background-size: 18px 18px;
-  background-position: 0 0;
+    /* Layer 1: paper-grain dots, very subtle */
+    radial-gradient(rgba(58,38,20,0.045) 1px, transparent 1px),
+    /* Layer 2: film grain — small inline SVG noise plate */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.12  0 0 0 0 0.05  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>"),
+    /* Layer 3: gold sunset radial from top-center */
+    radial-gradient(ellipse 1200px 760px at 50% -120px,
+      rgba(245, 211, 58, 0.28) 0%,
+      rgba(230, 184, 0, 0.16) 30%,
+      rgba(244, 236, 214, 0) 70%),
+    /* Layer 4: leaf-green wash from bottom-left for depth */
+    radial-gradient(ellipse 900px 600px at -10% 110%,
+      rgba(15, 116, 56, 0.10) 0%,
+      rgba(15, 116, 56, 0) 60%),
+    /* Layer 5: ember wash from bottom-right */
+    radial-gradient(ellipse 700px 500px at 110% 105%,
+      rgba(192, 56, 43, 0.08) 0%,
+      rgba(192, 56, 43, 0) 60%);
+  background-size: 18px 18px, 240px 240px, 100% 100%, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  background-attachment: scroll, scroll, fixed, fixed, fixed;
+  min-height: 100vh;
+}
+
+/* ─── Sticky tricolor band at the very top of the viewport ─────────────
+   2px line of green/gold/red, fixed to top of page (above sticky nav). */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 100;
+  background-image: linear-gradient(90deg,
+    theme('colors.jam_green') 0 33.3%,
+    theme('colors.jam_gold')  33.3% 66.6%,
+    theme('colors.jam_red')   66.6% 100%);
+  pointer-events: none;
 }
 
 /* Hand-drawn rule, used as section divider. */
@@ -62,13 +119,13 @@ body {
     theme('colors.jam_red')   66% 100%);
 }
 
-.serif { font-family: 'Fraunces', Georgia, serif; }
-.display { font-family: 'Anton', 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
-.mono { font-family: 'JetBrains Mono', monospace; }
+.serif   { font-family: var(--font-serif); }
+.display { font-family: var(--font-display); letter-spacing: 0.02em; }
+.mono    { font-family: var(--font-mono); }
 
 /* Drop-cap for editorial intro paragraphs. */
 .drop-cap::first-letter {
-  font-family: 'Anton', sans-serif;
+  font-family: var(--font-display);
   font-size: 4.4em;
   line-height: 0.86;
   float: left;
@@ -98,9 +155,64 @@ body {
 
 /* Section ornament — used above section heads. */
 .ornament {
-  font-family: 'Anton', sans-serif;
+  font-family: var(--font-display);
   font-size: 10px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: theme('colors.gold');
+}
+
+/* ─── Motion: staggered page-load reveals ────────────────────────────────
+   Apply .reveal to any element; add .reveal-1..reveal-8 for delay steps.
+   Honours prefers-reduced-motion. */
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.reveal {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.18s; }
+.reveal-3 { animation-delay: 0.32s; }
+.reveal-4 { animation-delay: 0.46s; }
+.reveal-5 { animation-delay: 0.60s; }
+.reveal-6 { animation-delay: 0.74s; }
+.reveal-7 { animation-delay: 0.88s; }
+.reveal-8 { animation-delay: 1.02s; }
+
+.reveal-fade {
+  animation: fadeIn 0.9s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-fade {
+    animation: none !important;
+  }
+}
+
+/* ─── Hover lifts for hub / link cards ───────────────────────────────────
+   Apply .lift to a card; transitions transform + border + shadow together. */
+.lift {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+.lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -16px rgba(13, 26, 16, 0.35);
+}
+
+/* Headline-tightener — combats Fraunces' generous spacing on huge sizes. */
+.headline-tight {
+  font-feature-settings: "ss01" on, "ss02" on, "ss03" on;
+  letter-spacing: -0.012em;
 }
