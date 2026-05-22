@@ -6,6 +6,7 @@ const NAV = [
   { href: "/family",        label: "Family Tree" },
   { href: "/damian-marley", label: "Damian" },
   { href: "/discography",   label: "Discography" },
+  { href: "/related",       label: "Related" },
   { href: "/wailers",       label: "The Wailers" },
   { href: "/studios",       label: "Studios" },
   { href: "/places",        label: "Places" },
