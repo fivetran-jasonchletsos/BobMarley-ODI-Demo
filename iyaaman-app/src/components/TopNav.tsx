@@ -12,6 +12,7 @@ const NAV = [
   { href: "/liner-notes",   label: "Liner Notes" },
   { href: "/wailers",       label: "Wailers" },
   { href: "/related",       label: "Related" },
+  { href: "/match",         label: "Match" },
   { href: "/ask",           label: "Ask" },
 ];
 
