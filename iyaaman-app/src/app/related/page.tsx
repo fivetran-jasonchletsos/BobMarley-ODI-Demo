@@ -26,14 +26,18 @@ export default function RelatedPage() {
       });
   }, []);
 
-  const [selectedSlug, setSelectedSlug] = useState<string>("bob-marley");
+  // Start with no selection — page loads in a calm "welcome" state with a
+  // clear prompt. Users opt in to the dynamic detail view by clicking a
+  // musician on the left. Reduces first-load visual overload.
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
 
   const selected = useMemo(
-    () => people.find((p) => p.slug === selectedSlug) ?? people.find((p) => p.slug === "bob-marley")!,
+    () => (selectedSlug ? people.find((p) => p.slug === selectedSlug) ?? null : null),
     [selectedSlug],
   );
 
   const selectedAlbums = useMemo(() => {
+    if (!selected) return [];
     return albumsByArtist(selected.slug).sort((a, b) => a.year - b.year);
   }, [selected]);
 
@@ -41,6 +45,7 @@ export default function RelatedPage() {
   // person's albums, minus the selected person themselves. Carry a count of
   // how many albums they share so we can rank them.
   const relatedPeople = useMemo(() => {
+    if (!selected) return [];
     const counts = new Map<string, number>();
     for (const a of selectedAlbums) {
       for (const slug of a.artistSlugs) {
@@ -85,7 +90,7 @@ export default function RelatedPage() {
             <ul className="space-y-1">
               {musicians.map((p) => {
                 const count = albumsByArtist(p.slug).length;
-                const active = selected.slug === p.slug;
+                const active = selected?.slug === p.slug;
                 return (
                   <li key={p.slug}>
                     <button
@@ -112,82 +117,133 @@ export default function RelatedPage() {
             </ul>
           </aside>
 
-          {/* ---------- Right column: detail ---------- */}
+          {/* ---------- Right column: detail OR welcome state ---------- */}
           <div>
-            {/* Person header */}
-            <div className="border-b border-bark/15 pb-5 mb-6">
-              <p className="ornament mb-2">{selected.role}</p>
-              <h2 className="display text-bark text-4xl sm:text-5xl tracking-tight leading-none">
-                {selected.name}
-              </h2>
-              {selected.bio && (
-                <p className="serif text-bark_2 mt-4 leading-relaxed max-w-3xl">
-                  {selected.bio}
+            {!selected ? (
+              /* ============ Welcome / paused state ============ */
+              <div className="reveal-fade border-2 border-dashed border-bark/25 rounded-lg p-8 sm:p-12 bg-sand_2/30 text-center min-h-[420px] flex flex-col items-center justify-center">
+                <p className="ornament mb-3">Pick a musician</p>
+                <h2 className="display text-bark text-3xl sm:text-5xl leading-tight tracking-tight mb-5">
+                  Click any name on the left to begin
+                </h2>
+                <p className="serif italic text-bark_2 text-base sm:text-lg max-w-xl leading-relaxed">
+                  This page is a map of who played on what. The list on the left is
+                  ranked by album credits. Tap any musician and their full discography
+                  plus everyone they played with appears here. Take your time —
+                  nothing moves until you do.
                 </p>
-              )}
-              <p className="mono text-[10px] tracking-widest uppercase text-cocoa mt-3">
-                {selectedAlbums.length} {selectedAlbums.length === 1 ? "album" : "albums"} credited
-              </p>
-            </div>
-
-            {/* Album grid */}
-            {selectedAlbums.length === 0 ? (
-              <p className="serif italic text-cocoa text-center py-12">
-                No albums credited to this person.
-              </p>
-            ) : (
-              <>
-                <p className="ornament mb-4">Albums</p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-7">
-                  {selectedAlbums.map((a) => (
-                    <article key={a.slug} className="group flex flex-col">
-                      <Link
-                        href={`/discography/${a.slug}/`}
-                        className="block border-2 border-bark/20 hover:border-ember/70 overflow-hidden transition-all hover:shadow-lg"
-                        aria-label={`Open details for ${a.title}`}
+                <div className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                  {["bob-marley", "damian-marley", "stephen-marley", "ziggy-marley", "peter-tosh"].map((slug) => {
+                    const p = people.find((x) => x.slug === slug);
+                    if (!p) return null;
+                    return (
+                      <button
+                        key={slug}
+                        type="button"
+                        onClick={() => setSelectedSlug(slug)}
+                        className="mono text-[10px] tracking-widest uppercase
+                                   border border-bark/30 bg-sand_2/60 hover:border-ember hover:bg-ember/10 hover:text-ember
+                                   text-bark_2 px-3 py-2 rounded transition-colors"
                       >
-                        <AlbumCover album={a} size="card" showSpotifyButton />
-                      </Link>
-                      <div className="mt-2.5">
-                        <Link
-                          href={`/discography/${a.slug}/`}
-                          className="block group-hover:text-ember transition-colors"
-                        >
-                          <h3 className="serif text-bark text-sm leading-tight">
-                            {a.title}
-                          </h3>
-                        </Link>
-                        <p className="mono text-[9px] tracking-widest uppercase text-cocoa mt-1 truncate">
-                          {a.artistDisplay}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
+                        Try {p.name.split(" ")[0]} →
+                      </button>
+                    );
+                  })}
                 </div>
-              </>
-            )}
+                <p className="mono text-[10px] tracking-widest text-cocoa uppercase mt-8 opacity-70">
+                  Or click any name from the full list on the left
+                </p>
+              </div>
+            ) : (
+              /* ============ Detail view ============ */
+              <div key={selected.slug} className="reveal-fade">
+                {/* Person header */}
+                <div className="border-b border-bark/15 pb-5 mb-6 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="ornament mb-2">{selected.role}</p>
+                    <h2 className="display text-bark text-4xl sm:text-5xl tracking-tight leading-none">
+                      {selected.name}
+                    </h2>
+                    {selected.bio && (
+                      <p className="serif text-bark_2 mt-4 leading-relaxed max-w-3xl">
+                        {selected.bio}
+                      </p>
+                    )}
+                    <p className="mono text-[10px] tracking-widest uppercase text-cocoa mt-3">
+                      {selectedAlbums.length} {selectedAlbums.length === 1 ? "album" : "albums"} credited
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedSlug(null)}
+                    className="shrink-0 mono text-[10px] tracking-widest uppercase
+                               border border-bark/30 px-2.5 py-1.5 rounded hover:border-ember hover:text-ember
+                               transition-colors"
+                  >
+                    Reset
+                  </button>
+                </div>
 
-            {/* Related people */}
-            {relatedPeople.length > 0 && (
-              <div className="mt-12 border-t border-bark/15 pt-6">
-                <p className="ornament mb-4">Who they played with</p>
-                <div className="flex flex-wrap gap-2">
-                  {relatedPeople.map(({ person: rp, count }) => (
-                    <button
-                      key={rp.slug}
-                      type="button"
-                      onClick={() => setSelectedSlug(rp.slug)}
-                      className="group inline-flex items-baseline gap-2 px-3 py-1.5 border border-bark/20 bg-sand_2/40 hover:border-ember hover:bg-ember/10 rounded transition-colors"
-                    >
-                      <span className="serif text-sm text-bark group-hover:text-ember">
-                        {rp.name}
-                      </span>
-                      <span className="mono text-[9px] tracking-widest uppercase text-cocoa">
-                        {count} {count === 1 ? "album" : "albums"}
-                      </span>
-                    </button>
-                  ))}
-                </div>
+                {/* Album grid */}
+                {selectedAlbums.length === 0 ? (
+                  <p className="serif italic text-cocoa text-center py-12">
+                    No albums credited to this person.
+                  </p>
+                ) : (
+                  <>
+                    <p className="ornament mb-4">Albums</p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-7">
+                      {selectedAlbums.map((a) => (
+                        <article key={a.slug} className="group flex flex-col">
+                          <Link
+                            href={`/discography/${a.slug}/`}
+                            className="block border-2 border-bark/20 hover:border-ember/70 overflow-hidden transition-all hover:shadow-lg"
+                            aria-label={`Open details for ${a.title}`}
+                          >
+                            <AlbumCover album={a} size="card" showSpotifyButton />
+                          </Link>
+                          <div className="mt-2.5">
+                            <Link
+                              href={`/discography/${a.slug}/`}
+                              className="block group-hover:text-ember transition-colors"
+                            >
+                              <h3 className="serif text-bark text-sm leading-tight">
+                                {a.title}
+                              </h3>
+                            </Link>
+                            <p className="mono text-[9px] tracking-widest uppercase text-cocoa mt-1 truncate">
+                              {a.artistDisplay}
+                            </p>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {/* Related people */}
+                {relatedPeople.length > 0 && (
+                  <div className="mt-12 border-t border-bark/15 pt-6">
+                    <p className="ornament mb-4">Who they played with</p>
+                    <div className="flex flex-wrap gap-2">
+                      {relatedPeople.map(({ person: rp, count }) => (
+                        <button
+                          key={rp.slug}
+                          type="button"
+                          onClick={() => setSelectedSlug(rp.slug)}
+                          className="group inline-flex items-baseline gap-2 px-3 py-1.5 border border-bark/20 bg-sand_2/40 hover:border-ember hover:bg-ember/10 rounded transition-colors"
+                        >
+                          <span className="serif text-sm text-bark group-hover:text-ember">
+                            {rp.name}
+                          </span>
+                          <span className="mono text-[9px] tracking-widest uppercase text-cocoa">
+                            {count} {count === 1 ? "album" : "albums"}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>

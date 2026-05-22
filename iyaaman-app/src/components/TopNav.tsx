@@ -9,7 +9,9 @@ const NAV = [
   { href: "/tree",          label: "The Tree" },
   { href: "/damian-marley", label: "Damian" },
   { href: "/discography",   label: "Discography" },
+  { href: "/liner-notes",   label: "Liner Notes" },
   { href: "/wailers",       label: "Wailers" },
+  { href: "/related",       label: "Related" },
   { href: "/ask",           label: "Ask" },
 ];
 
