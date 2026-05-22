@@ -17,6 +17,15 @@ const WC = (file: string, width = 1100) =>
 
 export const rarePhotos: RarePhoto[] = [
   {
+    filename: "bob-neville-garrick-1976.jpg",
+    url: WC("Bob_Marley_by_Neville_Garrick_1976.jpg"),
+    caption: "Bob — portrait by Neville Garrick",
+    context: "Neville Garrick was Bob's art director — he designed every Wailers album cover from Rastaman Vibration through Uprising. This 1976 portrait is one of the defining images of Bob at the height of the Island Records years.",
+    year: 1976,
+    credit: "Neville Garrick · via Wikimedia",
+    tags: ["portrait", "iconic", "1976"],
+  },
+  {
     filename: "bob-damian-baby-1979.jpg",
     caption: "Bob with infant Damian",
     context: "Damian was born July 21, 1978. He was just under three when Bob passed. Photos of the two of them together are exceptionally rare.",
@@ -68,15 +77,6 @@ export const rarePhotos: RarePhoto[] = [
     year: 1976,
     credit: "Public domain via Wikimedia",
     tags: ["wikimedia", "live"],
-  },
-  {
-    filename: "bob-neville-garrick-1976.jpg",
-    url: WC("Bob_Marley_by_Neville_Garrick_1976.jpg"),
-    caption: "Portrait by Neville Garrick",
-    context: "Neville Garrick was Bob's art director — designed every Wailers cover from Rastaman Vibration through Uprising.",
-    year: 1976,
-    credit: "Neville Garrick · via Wikimedia",
-    tags: ["wikimedia", "portrait", "iconic"],
   },
   {
     filename: "bob-i-threes.jpg",

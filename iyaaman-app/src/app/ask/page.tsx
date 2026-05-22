@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import TopNav from "@/components/TopNav";
 import { albums } from "@/lib/albums";
+import { people } from "@/lib/people";
 
 // ---------------------------------------------------------------------------
 // Compute aggregates from the actual albums dataset.
@@ -94,6 +95,26 @@ const bobDisco = albums.filter(
   (a) => a.artistSlugs.includes("bob-marley") && a.era !== "posthumous"
 ).length;
 const damianDisco = albums.filter((a) => a.artistSlugs.includes("damian-marley")).length;
+
+// Bob's family footprint — descendants from the people dataset.
+const BOB_CHILDREN = people.filter((p) =>
+  (p.relations ?? []).some((r) => r.kind === "parent" && r.slug === "bob-marley")
+);
+const BOB_GRANDCHILDREN = people.filter((p) =>
+  (p.relations ?? []).some(
+    (r) =>
+      r.kind === "parent" &&
+      BOB_CHILDREN.some((c) => c.slug === r.slug)
+  )
+);
+// Children with their own counted offspring — for the per-child table.
+const CHILDREN_WITH_KIDS = BOB_CHILDREN.map((c) => {
+  const kids = people.filter((p) =>
+    (p.relations ?? []).some((r) => r.kind === "parent" && r.slug === c.slug)
+  );
+  return { name: c.name.split(" ").slice(0, 2).join(" "), slug: c.slug, kids: kids.length };
+}).sort((a, b) => b.kids - a.kids);
+const FAMILY_TOTAL_BELOW_BOB = BOB_CHILDREN.length + BOB_GRANDCHILDREN.length;
 
 const MARLEY_COUNTS = albumsPerMarley();
 const TOP_MARLEY = MARLEY_COUNTS[0];
@@ -306,6 +327,69 @@ type Question = {
 };
 
 const QUESTIONS: Question[] = [
+  {
+    id: "family-impact",
+    question: "How many people are under Bob through his family?",
+    matchers: [
+      "how many", "under", "descendants", "below bob", "below him",
+      "family tree size", "impact", "world through family",
+      "children", "grandchildren", "bloodline", "dynasty",
+    ],
+    sql: `WITH descendants AS (
+    SELECT p.person_id, p.full_name, 2 AS generation
+    FROM   gold.dim_person          p
+    JOIN   gold.dim_relation        r  ON r.child_id  = p.person_id
+    JOIN   gold.dim_person          bp ON r.parent_id = bp.person_id
+    WHERE  bp.slug = 'bob-marley'
+    UNION  ALL
+    SELECT p.person_id, p.full_name, 3 AS generation
+    FROM   gold.dim_person          p
+    JOIN   gold.dim_relation        r  ON r.child_id  = p.person_id
+    JOIN   descendants              d  ON r.parent_id = d.person_id
+)
+SELECT
+    CASE generation
+        WHEN 2 THEN 'Children (gen 2)'
+        WHEN 3 THEN 'Grandchildren (gen 3)'
+    END                              AS tier,
+    COUNT(*)                         AS people_count
+FROM   descendants
+GROUP  BY generation
+ORDER  BY generation;`,
+    viz: {
+      kind: "bar",
+      unit: "people",
+      data: [
+        { label: "Bob (gen 1)", value: 1 },
+        { label: "Children (gen 2)", value: BOB_CHILDREN.length },
+        { label: "Grandchildren (gen 3)", value: BOB_GRANDCHILDREN.length },
+        { label: "Total below Bob", value: FAMILY_TOTAL_BELOW_BOB },
+      ],
+    },
+    summary: `Bob fathered ${BOB_CHILDREN.length} publicly-acknowledged children by seven women between 1964 and 1981. From them came ${BOB_GRANDCHILDREN.length} grandchildren tracked in this catalog — and the real number keeps growing, with great-grandchildren now in their teens. In thirty-six years he seeded a dynasty of ${FAMILY_TOTAL_BELOW_BOB}+ direct descendants who hold ${GRAMMY_ALBUMS.length} Grammys between them and still tour under his name. The bloodline is the impact. The records are the receipts.`,
+  },
+  {
+    id: "children-by-fan-out",
+    question: "Which of Bob's children have the biggest families?",
+    matchers: ["children", "kids", "fan out", "biggest family", "grandchildren by parent"],
+    sql: `SELECT
+    c.full_name           AS child_of_bob,
+    COUNT(gc.person_id)   AS grandchildren_count
+FROM   gold.dim_person          c
+LEFT   JOIN gold.dim_relation   r  ON r.parent_id  = c.person_id
+LEFT   JOIN gold.dim_person     gc ON r.child_id   = gc.person_id
+JOIN   gold.dim_relation        rb ON rb.child_id  = c.person_id
+JOIN   gold.dim_person          b  ON rb.parent_id = b.person_id
+WHERE  b.slug = 'bob-marley'
+GROUP  BY c.full_name
+ORDER  BY grandchildren_count DESC;`,
+    viz: {
+      kind: "table",
+      columns: ["Bob's child", "Tracked grandchildren"],
+      rows: CHILDREN_WITH_KIDS.map((c) => [c.name, c.kids]),
+    },
+    summary: `Across Bob's ${BOB_CHILDREN.length} children, the second generation has produced ${BOB_GRANDCHILDREN.length} grandchildren tracked here — most through Cedella, Stephen, and Rohan. Every Marley child has at least one offspring in the public record; the family line has not narrowed in any branch.`,
+  },
   {
     id: "most-albums",
     question: "Which Marley made the most albums?",
