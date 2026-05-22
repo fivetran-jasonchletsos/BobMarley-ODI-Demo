@@ -105,12 +105,13 @@ export default function Hero() {
           ·  with love, from your oldest road  ·
         </p>
 
-        {/* For the kids in the back seat — Three Little Birds */}
+        {/* For Stella, Johnny Lee, and Kingston — the back-seat crew */}
         <div className="mt-10 text-center reveal reveal-8">
           <div className="inline-block border-t border-b border-jam_green/40 py-3 px-6 sm:px-10">
-            <p className="ornament mb-1 text-jam_green">For the back seat</p>
-            <p className="serif italic text-bark_2 text-sm sm:text-base leading-snug">
-              And for the kids on the school pickup ride — Bob has songs for them too.
+            <p className="ornament mb-1 text-jam_green">For the back-seat crew</p>
+            <p className="serif italic text-bark_2 text-sm sm:text-base leading-snug max-w-md">
+              For Stella, Johnny Lee, and Kingston on the school pickup ride —
+              Bob has songs for you too.
             </p>
             <p className="mono text-[9.5px] tracking-widest text-cocoa uppercase mt-2">
               Three Little Birds · Don&apos;t worry about a thing
