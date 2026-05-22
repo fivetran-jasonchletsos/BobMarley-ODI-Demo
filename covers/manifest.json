@@ -1,0 +1,360 @@
+{
+  "wailing-wailers": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e7/75/59/e775591b-baae-775a-2275-39efdd520d60/634457900127.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/The%20Wailing%20Wailers%20The%20Wailing%20Wailers",
+    "itunes_artist": "The Wailers",
+    "itunes_title": "The Wailing Wailers"
+  },
+  "soul-rebels": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cf/64/e5/cf64e5bf-0bb7-288e-b33a-58e1ea80a44a/24UMGIM03301.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/The%20Wailers%20Soul%20Rebels",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "One Love (Original Motion Picture Soundtrack)"
+  },
+  "soul-revolution": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c3/21/50/c321508d-b693-25d9-6a22-3d03fcbdabba/00731454640428.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/The%20Wailers%20Soul%20Revolution",
+    "itunes_artist": "Various Artists",
+    "itunes_title": "Chant Down Babylon (Remixes) [feat. Bob Marley]"
+  },
+  "best-of-wailers": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/15/0b/db/150bdba3-8dbb-8e66-79b3-c8e1dead908b/20UMGIM03868.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/The%20Wailers%20The%20Best%20of%20The%20Wailers",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Legend: The Best of Bob Marley and the Wailers (Deluxe Edition)"
+  },
+  "catch-a-fire": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/25/b3/cd/25b3cd5f-2e29-8c3f-68ed-677786a7d55a/06UMGIM06492.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/The%20Wailers%20Catch%20a%20Fire",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Catch A Fire (Remastered 2013)"
+  },
+  "burnin": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/30/24/ec/3024ec9b-fbf5-f7dd-60c5-5a5b697b4546/06UMGIM41501.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/The%20Wailers%20Burnin'",
+    "itunes_artist": "The Wailers",
+    "itunes_title": "Burnin' (Remastered 2001)"
+  },
+  "natty-dread": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b9/ec/9f/b9ec9f4a-c4f1-5136-7587-86826e28d67b/06UMGIM34964.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Natty%20Dread",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Natty Dread (2013 Remaster)"
+  },
+  "live": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d8/ae/48/d8ae48a4-fce4-efa1-960b-3e9717e490ff/00602557248913.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Live!",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Live! (Deluxe Edition)"
+  },
+  "rastaman-vibration": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/eb/62/b5/eb62b5e3-2c34-bd7f-dc88-c509c3914068/06UMGIM07210.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Rastaman%20Vibration",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Rastaman Vibration (2013 Remaster)"
+  },
+  "exodus": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/23/fa/f8/23faf820-c4fa-2bf1-d672-846971f5cf5c/06UMGIM31355.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Exodus",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Exodus (2013 Remaster)"
+  },
+  "kaya": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/52/1a/d4/521ad4e3-9c00-39ad-b5ae-6fc2f144bf98/06UMGIM11277.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Kaya",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Kaya (Remastered 2013)"
+  },
+  "babylon-by-bus": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/99/f6/10/99f6109c-c83b-4f6f-c0e6-61fba06be945/06UMGIM11276.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Babylon%20by%20Bus",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Babylon By Bus (Live) [2013 Remaster]"
+  },
+  "survival": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/bc/5c/8b/bc5c8b70-763f-e992-4ebe-6e702d74f365/06UMGIM04446.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Survival",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Survival (2013 Remaster)"
+  },
+  "uprising": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/80/61/a5/8061a5cc-3372-7679-7396-e42e86041d21/15UMGIM05274.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Uprising",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Uprising"
+  },
+  "confrontation": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7c/d4/03/7cd403cb-802c-b10e-9e11-10a8ca1d67fc/06UMGIM02205.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Confrontation",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Confrontation (2013 Remaster)"
+  },
+  "legend": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3c/c2/0d/3cc20dcc-8f4e-f060-36dd-7de52a7ec8fe/12UMGIM14712.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Bob%20Marley%20%26%20The%20Wailers%20Legend",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Legend – The Best Of Bob Marley & The Wailers"
+  },
+  "children-playing": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/52/1a/d4/521ad4e3-9c00-39ad-b5ae-6fc2f144bf98/06UMGIM11277.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Play%20the%20Game%20Right",
+    "itunes_artist": "Bob Marley & The Wailers",
+    "itunes_title": "Kaya (Remastered 2013)"
+  },
+  "hey-world": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4d/d2/7d/4dd27d9b-83ed-aaa1-55cc-14c1a6afa10e/05099923604551.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Hey%20World!",
+    "itunes_artist": "The Melody Makers & Ziggy Marley",
+    "itunes_title": "Hey World"
+  },
+  "time-has-come": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/f1/ba/5e/f1ba5e93-faf9-4348-b041-95b285f81bfa/00077779095254.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Time%20Has%20Come...%20The%20Best%20of%20Ziggy%20Marley%20%26%20The%20Melody%20Makers",
+    "itunes_artist": "Ziggy Marley & The Melody Makers",
+    "itunes_title": "'Time Has Come...' The Best Of"
+  },
+  "conscious-party": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/61/09/a3/6109a372-4b64-6b2a-9748-8c69f7d805c8/00077778603856.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Conscious%20Party",
+    "itunes_artist": "Ziggy Marley & The Melody Makers",
+    "itunes_title": "Conscious Party"
+  },
+  "one-bright-day": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e6/26/a6/e626a61d-6a9f-e963-9d18-2ec10b04e8cf/13UABIM31869.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20One%20Bright%20Day",
+    "itunes_artist": "Ziggy Marley & The Melody Makers",
+    "itunes_title": "One Bright Day"
+  },
+  "jahmekya": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b3/f5/84/b3f5845c-df14-e418-8bc3-cba9b700f1c1/13UABIM54256.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Jahmekya",
+    "itunes_artist": "Ziggy Marley & The Melody Makers",
+    "itunes_title": "Jahmekya"
+  },
+  "joy-and-blues": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/39/d1/6f/39d16f48-21f8-d94e-25dd-3c39a9b4cca9/00077778796152.tif/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Joy%20and%20Blues",
+    "itunes_artist": "Ziggy Marley & The Melody Makers",
+    "itunes_title": "Joy and Blues"
+  },
+  "free-like-we-want-2-b": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/db/4c/83/db4c83ec-9558-b90d-a199-3a62ef2c96a5/603497984619_1.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20%26%20The%20Melody%20Makers%20Free%20Like%20We%20Want%202%20B",
+    "itunes_artist": "Ziggy Marley & The Melody Makers",
+    "itunes_title": "Free Like We Want 2 B"
+  },
+  "love-is-my-religion": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ee/10/29/ee102924-97b6-167b-6167-4035412844cd/094922607256.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20Love%20Is%20My%20Religion",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "Love Is My Religion (Deluxe Version)"
+  },
+  "family-time": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/15/a6/69/15a669ea-5a8e-2f27-ff8b-5402ab39e5c6/ZM_FAMILY_TIME_cover.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20Family%20Time",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "Family Time (SingALong version)"
+  },
+  "wild-and-free": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/50/b0/03/mzi.ueasjibs.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20Wild%20and%20Free",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "Wild and Free (Deluxe Version)"
+  },
+  "fly-rasta": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/da/86/49/da8649d9-10c6-4609-405f-c18a965bb9d9/Fly_Rasta_SQUARE.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20Fly%20Rasta",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "Fly Rasta"
+  },
+  "ziggy-marley-album": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music49/v4/b8/eb/a7/b8eba772-d8e8-937a-94ae-a1654f6defc9/cover.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20Ziggy%20Marley",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "Ziggy Marley"
+  },
+  "rebellion-rises": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cf/69/cb/cf69cb6f-d0ca-a304-fe1e-576fe68a83c9/Rebellion_Rises-Album_Cover-Square_copy.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20Rebellion%20Rises",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "Rebellion Rises"
+  },
+  "more-family-time": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3d/38/50/3d3850fe-5df2-3b16-544b-0efed21fee33/More_Family_Time-Cover_Art-3000sq.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ziggy%20Marley%20More%20Family%20Time",
+    "itunes_artist": "Ziggy Marley",
+    "itunes_title": "More Family Time"
+  },
+  "mind-control": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c4/2a/6c/c42a6c7d-9ce0-2d26-89f8-0046cd58d2e8/00602517303645.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Stephen%20Marley%20Mind%20Control",
+    "itunes_artist": "Stephen Marley",
+    "itunes_title": "Mind Control (Bonus Track Version)"
+  },
+  "revelation-pt1": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/67/e5/aa/67e5aa6e-c674-e39d-fbc6-55e8dde086c4/00602527728476.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Stephen%20Marley%20Revelation%20Part%20I%3A%20The%20Root%20of%20Life",
+    "itunes_artist": "Stephen Marley",
+    "itunes_title": "Revelation, Pt. 1: The Root of Life"
+  },
+  "revelation-pt2": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/67/e5/aa/67e5aa6e-c674-e39d-fbc6-55e8dde086c4/00602527728476.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Stephen%20Marley%20Revelation%20Part%20II%3A%20The%20Fruit%20of%20Life",
+    "itunes_artist": "Stephen Marley",
+    "itunes_title": "Revelation, Pt. 1: The Root of Life"
+  },
+  "old-soul": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/20/16/67/20166743-95fc-5966-fd08-0586d94dab73/23UMGIM89664.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Stephen%20Marley%20Old%20Soul",
+    "itunes_artist": "Stephen Marley",
+    "itunes_title": "Old Soul"
+  },
+  "mr-marley": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/28/47/31/28473181-1b30-47c2-7070-410d72e36f1d/07UMGIM15592.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Damian%20'Jr.%20Gong'%20Marley%20Mr.%20Marley",
+    "itunes_artist": "Damian \"Jr. Gong\" Marley",
+    "itunes_title": "Mr. Marley"
+  },
+  "halfway-tree": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ec/9d/72/ec9d7249-6d71-6ade-201e-cc2a85f09f86/06UMGIM09156.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Damian%20'Jr.%20Gong'%20Marley%20Halfway%20Tree",
+    "itunes_artist": "Damian \"Jr. Gong\" Marley",
+    "itunes_title": "Halfway Tree"
+  },
+  "welcome-to-jamrock": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/23/da/8c/23da8cf8-e935-3d74-69a3-d12979083046/06UMGIM25409.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Damian%20'Jr.%20Gong'%20Marley%20Welcome%20to%20Jamrock",
+    "itunes_artist": "Damian \"Jr. Gong\" Marley",
+    "itunes_title": "Welcome to Jamrock"
+  },
+  "distant-relatives": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/07/35/27/0735277a-df09-9abf-ff05-1539e19303cd/10UMGIM03854.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Nas%20%26%20Damian%20'Jr.%20Gong'%20Marley%20Distant%20Relatives",
+    "itunes_artist": "Nas & Damian \"Jr. Gong\" Marley",
+    "itunes_title": "Distant Relatives (Bonus Track Version)"
+  },
+  "stony-hill": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d4/17/e6/d417e6dc-6888-9329-19f5-8bad682952af/00602557173703.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Damian%20'Jr.%20Gong'%20Marley%20Stony%20Hill",
+    "itunes_artist": "Damian \"Jr. Gong\" Marley",
+    "itunes_title": "Stony Hill"
+  },
+  "like-father-like-son": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/13/0c/fd/130cfd65-9581-799c-e260-38c694e07ce2/mzi.acqgpsyv.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ky-Mani%20Marley%20Like%20Father%20Like%20Son",
+    "itunes_artist": "Protoje",
+    "itunes_title": "Rasta Love (feat. Ky-Mani Marley) - Single"
+  },
+  "journey": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/02/69/59/026959b7-eba1-b3f7-8582-33d755137206/5034644141169.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ky-Mani%20Marley%20The%20Journey",
+    "itunes_artist": "Ky-Mani Marley",
+    "itunes_title": "The Journey"
+  },
+  "milestone": {
+    "found": false,
+    "spotify_search": "https://open.spotify.com/search/Ky-Mani%20Marley%20Milestone"
+  },
+  "radio": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music/30/f7/76/mzi.kzftijkl.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ky-Mani%20Marley%20Radio",
+    "itunes_artist": "Ky-Mani Marley",
+    "itunes_title": "Radio"
+  },
+  "maestro": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/47/f9/d1/47f9d1ee-21f3-f39c-e892-aaec6bdaa075/4511.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Ky-Mani%20Marley%20Maestro",
+    "itunes_artist": "Ky-Mani Marley",
+    "itunes_title": "Maestro"
+  },
+  "lion-in-the-morning": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/be/b1/63/beb16362-169d-b53f-7186-eccf028d7830/196872959222.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Julian%20Marley%20Lion%20in%20the%20Morning",
+    "itunes_artist": "Miley Cyrus",
+    "itunes_title": "Something Beautiful"
+  },
+  "place-of-mind": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/40/73/62/4073626e-dd0d-b440-fbef-b718cb6b3d96/947.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Julian%20Marley%20A%20Time%20%26%20Place",
+    "itunes_artist": "Julian Marley",
+    "itunes_title": "A Time and Place"
+  },
+  "awake": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/87/8d/34/878d3434-5db1-3e16-0177-09783002030b/00602527022437.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Julian%20Marley%20Awake",
+    "itunes_artist": "Julian Marley",
+    "itunes_title": "Awake"
+  },
+  "colors-of-royal": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7a/ce/52/7ace52f4-4c9e-92f6-960e-d954a8f851a0/cover.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Julian%20Marley%20%26%20Antaeus%20Colors%20of%20Royal",
+    "itunes_artist": "Julian Marley & Antaeus",
+    "itunes_title": "Colors Of Royal"
+  },
+  "higher-place": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/9e/b6/18/9eb6186a-5b64-7620-406c-7c4b734b69eb/20UMGIM71599.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Skip%20Marley%20Higher%20Place",
+    "itunes_artist": "Skip Marley",
+    "itunes_title": "Higher Place (Anniversary Edition)"
+  },
+  "higher-place-deluxe": {
+    "found": true,
+    "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/9e/b6/18/9eb6186a-5b64-7620-406c-7c4b734b69eb/20UMGIM71599.rgb.jpg/600x600bb.jpg",
+    "spotify_search": "https://open.spotify.com/search/Skip%20Marley%20Higher%20Place%20(Deluxe)",
+    "itunes_artist": "Skip Marley",
+    "itunes_title": "Higher Place (Anniversary Edition)"
+  },
+  "comfortable": {
+    "found": false,
+    "spotify_search": "https://open.spotify.com/search/JoMersa%20Marley%20Comfortable"
+  }
+}
